@@ -1,0 +1,285 @@
+/* Figma: Desktop 3 cards · Tablet/Mobile marquee (→ right) */
+
+.section {
+  width: 100%;
+  margin-top: 80px;
+}
+
+/* —— Mobile fluid 320–374 —— */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 335px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 7.5vw, 28px);
+  line-height: 1.14;
+  color: var(--dark-blue);
+}
+
+.subtitle {
+  margin: 0 0 64px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--dark-gray);
+}
+
+/* Marquee viewport — avatar overhangs card top by 24px */
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 24px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 36s linear infinite;
+}
+
+.list {
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  gap: 16px;
+  margin: 0;
+  padding: 0 8px 0 0;
+  list-style: none;
+}
+
+.card {
+  margin: 0;
+  flex-shrink: 0;
+  width: min(335px, calc(100vw - 40px));
+}
+
+.cardInner {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 78px 16px 32px;
+  background-color: var(--off-white);
+  border: 1px solid var(--gray);
+  border-radius: 27px;
+}
+
+.avatar {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 64px;
+  background-color: var(--white);
+  box-shadow: 0 1px 4px 0 rgb(16 24 40 / 6%);
+}
+
+.avatarImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.name {
+  margin: 0 0 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.testimonial {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+@keyframes marqueeRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Mobile 375 artboard — adaptive */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+
+  .heading {
+    max-width: 335px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+
+  .subtitle {
+    margin-bottom: 64px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+
+  .card {
+    width: 335px;
+  }
+
+  .cardInner {
+    padding: 78px 16px 32px;
+  }
+}
+
+/* Tablet — 2 cards visible, all 3 scroll L→R */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .section {
+    margin-top: 100px;
+  }
+
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .heading {
+    max-width: 552px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    margin-bottom: 88px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .list {
+    gap: 16px;
+    padding-right: 16px;
+  }
+
+  .card {
+    width: 344px;
+  }
+
+  .cardInner {
+    padding: 54px 16px 32px;
+  }
+}
+
+/* Desktop — static 3-card row, no marquee */
+@media screen and (min-width: 1440px) {
+  .section {
+    margin-top: 120px;
+  }
+
+  .container {
+    width: 1440px;
+    max-width: none;
+    padding: 0 96px;
+  }
+
+  .heading {
+    max-width: 552px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    margin-bottom: 88px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  /* Figma: block 1202×256 · card 382×256 · gap 28 (3×382+2×28=1202) */
+  .viewport {
+    overflow: visible;
+    width: 1202px;
+    max-width: 1202px;
+    height: 256px;
+    margin-inline: auto;
+    padding-top: 24px;
+    box-sizing: content-box;
+  }
+
+  .track {
+    display: block;
+    width: 1202px;
+    height: 256px;
+    animation: none;
+    transform: none;
+  }
+
+  .track .list:last-child {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    gap: 28px;
+    width: 1202px;
+    height: 256px;
+    padding: 0;
+  }
+
+  .card {
+    flex: 0 0 382px;
+    width: 382px;
+    height: 256px;
+  }
+
+  .cardInner {
+    width: 382px;
+    height: 256px;
+    padding: 54px 28px 32px;
+  }
+}

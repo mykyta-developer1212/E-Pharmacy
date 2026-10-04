@@ -1,0 +1,215 @@
+/* Figma: Mobile 335×410 · Tablet 670×362 · Desktop 1019×167 */
+
+/* —— Mobile fluid 320–374 —— */
+
+.container {
+  max-width: 1019px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 335px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  background-color: var(--white);
+  border: 1.15px solid var(--gray);
+  border-radius: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: var(--off-green);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+  line-height: 1;
+  color: var(--green);
+}
+
+.title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--dark-slate);
+}
+
+.footer {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+}
+
+.value {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 140%;
+  color: var(--dark-slate);
+}
+
+.link {
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+
+/* Mobile 375 artboard — 335×410 */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+
+  .container {
+    width: 100%;
+    max-width: 375px;
+    padding: 0 20px;
+  }
+
+  .list {
+    max-width: 335px;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 14px 16px;
+    border-radius: 20px;
+  }
+
+  .badge {
+    width: 54px;
+    height: 54px;
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .value {
+    font-size: 24px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+}
+
+/* Tablet — 670×362, 2 columns */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+
+  .container {
+    width: 100%;
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 670px;
+    margin-inline: auto;
+  }
+
+  .card {
+    height: 173px;
+    padding: 16px 24px;
+    border-radius: 27px;
+  }
+
+  .header {
+    gap: 16px;
+  }
+
+  .badge {
+    width: 74px;
+    height: 74px;
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .value {
+    font-size: 28px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+}
+
+/* Desktop — 1019×167, 3 columns */
+@media screen and (min-width: 1440px) {
+
+  .container {
+    width: 1019px;
+    max-width: none;
+    padding: 0 81px;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, 321px);
+    gap: 28px;
+    max-width: 1019px;
+    margin-inline: 0;
+  }
+
+  .card {
+    height: 167px;
+    padding: 16px 24px;
+    border-radius: 27px;
+  }
+
+  .badge {
+    width: 74px;
+    height: 74px;
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .value {
+    font-size: 36px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+}

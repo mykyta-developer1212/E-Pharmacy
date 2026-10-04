@@ -1,0 +1,347 @@
+/* Figma: Desktop 1248×589 · Tablet stacked · Mobile stacked
+   Marquee (→ right) on tablet & phone only */
+
+.section {
+  width: 100%;
+  margin-top: 80px;
+}
+
+/* —— Mobile fluid 320–374 —— */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--green);
+  border-radius: 32px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 40px 20px 32px;
+}
+
+.title {
+  margin: 0 0 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 7.5vw, 28px);
+  line-height: 1.14;
+  color: var(--white);
+}
+
+.description {
+  margin: 0 0 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--white);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 13px 32px;
+  border: 1px solid var(--white);
+  border-radius: 60px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--white);
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--white);
+  color: var(--green);
+  outline: none;
+}
+
+.media {
+  width: 100%;
+  aspect-ratio: 335 / 280;
+  overflow: hidden;
+  /* Green crop: large left arc into green; bottom-right matches banner */
+  border-radius: 140px 0 32px 140px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ticker / lightning block — marquee on mobile & tablet */
+.ticker {
+  margin-top: 24px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tickerTrack {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 28s linear infinite;
+}
+
+.features {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 32px;
+  margin: 0;
+  padding: 0 16px 0 0;
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconLightning {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  fill: var(--green);
+  stroke: var(--green);
+  color: var(--green);
+}
+
+.featureText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--dark-blue);
+  white-space: nowrap;
+}
+
+@keyframes marqueeRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tickerTrack {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Mobile 375 artboard */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+
+  .banner {
+    border-radius: 32px;
+  }
+
+  .copy {
+    padding: 40px 20px 32px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 1.14;
+  }
+
+  .description {
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+
+  .media {
+    aspect-ratio: 335 / 280;
+    border-radius: 140px 0 32px 140px;
+  }
+
+  .ticker {
+    margin-top: 24px;
+  }
+
+  .features {
+    gap: 32px;
+  }
+
+  .featureText {
+    font-size: 14px;
+  }
+}
+
+/* Tablet — stacked banner + marquee ticker */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .section {
+    margin-top: 100px;
+  }
+
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .banner {
+    border-radius: 40px;
+  }
+
+  .copy {
+    padding: 64px 48px 40px;
+    max-width: 560px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .description {
+    margin-bottom: 40px;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .button {
+    padding: 13px 50px;
+  }
+
+  .media {
+    aspect-ratio: 704 / 360;
+    border-radius: 180px 0 40px 180px;
+  }
+
+  .ticker {
+    margin-top: 32px;
+  }
+
+  .features {
+    gap: 40px;
+    padding-right: 20px;
+  }
+
+  .featureText {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* Desktop — side-by-side banner, static feature row */
+@media screen and (min-width: 1440px) {
+  .section {
+    margin-top: 120px;
+  }
+
+  .container {
+    width: 1248px;
+    max-width: none;
+    padding: 0;
+  }
+
+  .banner {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 524px;
+    border-radius: 60px;
+  }
+
+  .copy {
+    flex: 1 1 0;
+    justify-content: center;
+    max-width: none;
+    padding: 64px 32px 64px 64px;
+  }
+
+  .title {
+    max-width: 421px;
+    margin-bottom: 24px;
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .description {
+    max-width: 421px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .button {
+    padding: 13px 50px;
+  }
+
+  .media {
+    flex: 0 0 661px;
+    width: 661px;
+    height: 524px;
+    aspect-ratio: auto;
+    /* Semi-circle crop on the left into green; right matches banner */
+    border-radius: 262px 60px 60px 262px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ticker {
+    margin-top: 40px;
+    overflow: visible;
+  }
+
+  .tickerTrack {
+    display: block;
+    width: 100%;
+    animation: none;
+    transform: none;
+  }
+
+  .tickerTrack .features:last-child {
+    display: none;
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .featureText {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}

@@ -1,0 +1,294 @@
+.footer {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  background-color: var(--green);
+  color: var(--gray);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* —— Top: brand + nav/social —— */
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  margin-bottom: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.description {
+  width: 261px;
+  max-width: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2857;
+  color: var(--gray);
+}
+
+/* —— Nav —— */
+.nav {
+  margin-bottom: 80px;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2857;
+  color: var(--gray);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+/* —— Social (tablet+; hidden on phone per Figma) —— */
+.socialList {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid rgb(247 248 250 / 10%);
+  border-radius: 10px;
+  color: rgb(247 248 250 / 80%);
+  transition: border-color 0.2s ease;
+}
+
+.socialLink:hover {
+  border-color: rgb(247 248 250 / 50%);
+}
+
+.socialIcon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* —— Bottom legal —— */
+.bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgb(247 248 250 / 40%);
+}
+
+.bottomList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bottomItem {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.bottomItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 1px;
+  height: 10px;
+  transform: translateY(-50%);
+  background-color: rgb(247 248 250 / 40%);
+  border-radius: 8px;
+}
+
+.bottomLink {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.bottomLink:hover {
+  opacity: 0.7;
+}
+
+/* —— Breakpoints —— */
+
+/* From 375px: fixed adaptive width */
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+}
+
+/* Tablet from 768px */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 768px;
+    padding: 32px;
+  }
+
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 88px;
+  }
+
+  .brand {
+    margin-bottom: 0;
+  }
+
+  .logo {
+    gap: 14px;
+  }
+
+  .logoIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logoText {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav {
+    margin-bottom: 32px;
+  }
+
+  .navLink {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .socialList {
+    display: flex;
+    gap: 12px;
+  }
+
+  .bottom {
+    padding-top: 32px;
+  }
+
+  .bottomList {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .bottomItem {
+    font-size: 14px;
+    line-height: 1.2857;
+  }
+
+  .bottomItem:not(:last-child)::after {
+    right: -12px;
+    height: 18px;
+  }
+}
+
+/* Desktop from 1440px */
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    max-width: none;
+    padding: 40px 128px;
+  }
+
+  .top {
+    gap: 115px;
+    margin-bottom: 64px;
+  }
+
+  .description {
+    width: 311px;
+  }
+
+  .links {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 1;
+    gap: 270px;
+  }
+
+  .nav {
+    margin-bottom: 0;
+  }
+
+  .navList {
+    gap: 50px;
+  }
+
+  .bottom {
+    padding-top: 40px;
+  }
+}

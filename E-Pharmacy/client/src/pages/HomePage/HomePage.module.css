@@ -1,0 +1,19 @@
+.pageGrid {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapperBackground {
+  background-color: var(--ghost-white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px; 
+  padding-bottom: 120px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}

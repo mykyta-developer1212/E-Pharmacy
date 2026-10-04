@@ -1,0 +1,237 @@
+/* Figma: Mobile 331×312 · Tablet 704×508 · Desktop 749×508
+   Image + copy in one grid cell. No absolute / top / right / left / bottom. */
+
+.banner {
+  width: 100%;
+  background-color: var(--green);
+}
+
+/* —— Mobile fluid 320–374 —— */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  max-width: 331px;
+  margin-inline: 0;
+  aspect-ratio: 331 / 312;
+  overflow: hidden;
+}
+
+.image,
+.copy {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+/*
+  Mobile: image slightly larger than stage; title lower + flush left;
+  subtitle on trailing side, a bit higher (tighter gap).
+*/
+.image {
+  display: block;
+  width: 112%;
+  height: 112%;
+  justify-self: center;
+  align-self: end;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.copy {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* Title flush left; subtitle higher + roomier line-height */
+  padding: 48px 12px 0 0;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-optical-sizing: none;
+  font-size: clamp(40px, 12.5vw, 50px);
+  line-height: 1;
+  text-align: start;
+  color: var(--white);
+  width: 609px;
+}
+
+.subtitle {
+  align-self: flex-end;
+  width: min(156px, 48%);
+  max-width: 156px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: start;
+  color: var(--white);
+}
+
+/* Mobile 375 artboard */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    width: 100%;
+    max-width: 375px;
+    padding: 172px 16px 246px;
+  }
+
+  .stage {
+    width: 100%;
+    max-width: 331px;
+  }
+
+  .image {
+    width: 112%;
+    height: 112%;
+  }
+
+  .copy {
+    padding: 48px 12px 0 0;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .subtitle {
+    width: 156px;
+    max-width: 156px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/*
+  Tablet — stage 704×508
+  Title a bit further right; subtitle under trailing edge.
+*/
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    width: 100%;
+    max-width: 768px;
+    padding: 158px 32px 258px;
+  }
+
+  .stage {
+    width: 100%;
+    max-width: 704px;
+    margin-inline: auto;
+    aspect-ratio: 704 / 508;
+    overflow: visible;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    justify-self: stretch;
+    align-self: stretch;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .copy {
+    width: max-content;
+    max-width: calc(100% - 38px);
+    height: auto;
+    justify-self: start;
+    align-self: start;
+    margin-block-start: 140px;
+    margin-inline-start: 38px;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .title {
+    width: max-content;
+    max-width: 100%;
+    font-size: 74px;
+    line-height: 74px;
+    text-align: start;
+  }
+
+  .subtitle {
+    align-self: flex-end;
+    width: 207px;
+    max-width: 207px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: start;
+  }
+}
+
+/* Desktop — stage 749×508, title +54 / +140 */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: none;
+    padding: 72px 0 146px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .stage {
+    width: 749px;
+    max-width: 749px;
+    margin-inline: 0;
+    aspect-ratio: 749 / 508;
+    overflow: visible;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    justify-self: stretch;
+    align-self: stretch;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .copy {
+    width: max-content;
+    max-width: calc(100% - 54px);
+    height: auto;
+    margin-block-start: 140px;
+    margin-inline-start: 54px;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .title {
+    max-width: none;
+    font-size: 74px;
+    line-height: 74px;
+    text-align: start;
+  ;
+  }
+
+  .subtitle {
+    align-self: flex-end;
+    width: 207px;
+    max-width: 207px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: start;
+  }
+}

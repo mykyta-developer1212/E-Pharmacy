@@ -1,0 +1,441 @@
+/* Figma: Mobile 335×202 · Tablet 344×232 · Desktop 392×232 */
+
+.section {
+  width: 100%;
+  margin-top: 120px;
+}
+
+/* —— Mobile fluid 320–374 —— */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 335px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  max-width: 291px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 7.5vw, 28px);
+  line-height: 1.14;
+  color: var(--dark-blue);
+}
+
+.subtitle {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--dark-gray);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 335px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  margin: 0;
+  min-width: 0;
+}
+
+.cardInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 202px;
+  padding: 32px;
+  overflow: hidden;
+  background-color: var(--turquoise);
+  border: 1px solid var(--gray);
+  border-radius: 20px;
+}
+
+/*
+  Figma: three identical bars 198×42, rotate(22deg),
+  bg rgba(89,177,122,0.08), rounded on the left only; right clipped by overflow.
+  left/top below = unrotated box so its center matches Figma’s rotated AABB center.
+*/
+.decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decorLine {
+  position: absolute;
+  box-sizing: border-box;
+  width: 50.5%;
+  height: 18.1%;
+  max-height: 42px;
+  background-color: rgb(89 177 122 / 8%);
+  border-radius: 20px 0 0 20px;
+  transform: rotate(22deg);
+  transform-origin: center center;
+}
+
+/* Top — furthest right */
+.decorLine1 {
+  right: -28%;
+  top: 55%;
+}
+
+/* Middle — furthest left into the card */
+.decorLine2 {
+  right: -9%;
+  top: 67%;
+}
+
+/* Bottom — along the lower edge */
+.decorLine3 {
+  right: -13%;
+  top: 94%;
+}
+
+.cardInner > :not(.decor) {
+  position: relative;
+  z-index: 1;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.storeName {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--dark-blue);
+}
+
+.meta {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 14px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.iconStar {
+  flex-shrink: 0;
+  fill: var(--dark-yellow);
+  stroke: var(--dark-yellow);
+}
+
+.ratingValue {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--dark-blue);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.statusOpen {
+  background-color: rgb(89 177 122 / 10%);
+  color: var(--green);
+}
+
+.statusClose {
+  background-color: var(--white-red);
+  color: var(--red);
+}
+
+.address,
+.phone {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.address {
+  margin-bottom: 18px;
+}
+
+.iconMap,
+.iconPhone {
+  flex-shrink: 0;
+  margin-top: 1px;
+  fill: none;
+  stroke: currentColor;
+  color: var(--green);
+}
+
+.addressText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.street,
+.city,
+.phone span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--dark-gray);
+}
+
+.phone {
+  color: var(--dark-gray);
+}
+
+/* Mobile 375 artboard — adaptive */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+
+  .heading {
+    max-width: 335px;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+
+  .list {
+    max-width: 335px;
+    gap: 20px;
+  }
+
+  .cardInner {
+    min-height: 202px;
+    padding: 32px;
+  }
+}
+
+/* Tablet — 344×232, 2 columns: padding 32px, gap 16×16 */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .section {
+    padding-top: 120px;
+  }
+
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .heading {
+    max-width: 552px;
+    margin-bottom: 64px;
+    gap: 14px;
+  }
+
+  .title {
+    max-width: none;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 704px;
+  }
+
+  .cardInner {
+    min-height: 232px;
+    padding: 40px;
+    border-radius: 27px;
+  }
+
+  .decorLine {
+    width: 198px;
+    height: 42px;
+    max-height: none;
+  }
+
+  /* Anchored from the right so 344px & 392px cards share Figma offsets */
+  .decorLine1 {
+    left: auto;
+    right: -108px;
+    top: 128px;
+  }
+
+  .decorLine2 {
+    left: auto;
+    right: -34px;
+    top: 155px;
+  }
+
+  .decorLine3 {
+    left: auto;
+    right: -50px;
+    top: 218px;
+  }
+
+  .cardHeader {
+    margin-bottom: 20px;
+  }
+
+  .storeName {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .address {
+    margin-bottom: 14px;
+  }
+
+  .addressText {
+    gap: 4px;
+  }
+
+  .street,
+  .city,
+  .phone span {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* Desktop — 392×232, 3 columns */
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-top: 120px;
+  }
+
+  .container {
+    width: 1440px;
+    max-width: none;
+    padding: 0 96px;
+  }
+
+  .heading {
+    max-width: 552px;
+    margin-bottom: 64px;
+  }
+
+  .title {
+    max-width: none;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, 392px);
+    gap: 38px 36px;
+    max-width: 1248px;
+    margin-inline: 0;
+  }
+
+  .cardInner {
+    min-height: 232px;
+    padding: 40px;
+    border-radius: 27px;
+  }
+
+  .decorLine {
+    width: 198px;
+    height: 42px;
+    max-height: none;
+  }
+
+  .decorLine1 {
+    left: auto;
+    right: -108px;
+    top: 128px;
+  }
+
+  .decorLine2 {
+    left: auto;
+    right: -34px;
+    top: 155px;
+  }
+
+  .decorLine3 {
+    left: auto;
+    right: -50px;
+    top: 218px;
+  }
+
+  .cardHeader {
+    margin-bottom: 20px;
+  }
+
+  .storeName {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .address {
+    margin-bottom: 14px;
+  }
+
+  .street,
+  .city,
+  .phone span {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}

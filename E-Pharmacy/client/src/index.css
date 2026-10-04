@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --green: #59B17A;
+  --gray: #F1F1F1;
+  --white: #FFFFFF;
+  --dark-gray: #93939A;
+  --off-white: #FDFDFD;
+  --ghost-white: #F7F8FA; 
+  --off-green: #F4F8F7;
+  --dark-slate: #252539;
+  --dark-blue: #1D1E21;
+  --turquoise: #E7F1ED;
+  --dark-yellow: #FFC531; 
+  --eerie-black: #1D1E21;
+  --gray-green: #DCECE4; 
+  --white-red: #E7E1DE; 
+  --red: #E85050;
+  --mint-green: #A5D1B5; 
+  --fresh-mint-green: #88C6A0;
+  --aero-blue: #D7EAE0;
+  --seafoam-green: #69B887;
+  --sage-mint: #79BF94;
+  --celadon-mint: #A8D5BA; 
+  --light-mint: #98CDAC;
+  --aluminum-gray: #77787A; 
+  --cool-gray: #8A8B8D;
+  --light-gray: #ECEDEF;
+  --surface-light: #E8E8E9;
+  --stone-gray: #6A6A6F; 
+  --silver-light-gray: #A5A5A6; 
+  --silver-gray: #A0A1A3;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#root > main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
