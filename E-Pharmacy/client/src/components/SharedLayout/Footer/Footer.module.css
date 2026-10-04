@@ -1,14 +1,18 @@
 .footer {
   width: 100%;
+  max-width: 100%;
   margin-top: auto;
   margin-bottom: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  align-self: stretch;
   background-color: var(--green);
   color: var(--gray);
+  overflow-x: clip;
 }
 
 .container {
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -135,6 +139,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 100%;
 }
 
 .bottomItem {
@@ -145,6 +150,7 @@
   line-height: 1;
   color: var(--gray);
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .bottomItem:not(:last-child)::after {
@@ -174,7 +180,8 @@
 /* From 375px: fixed adaptive width */
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
   }
 }
 
@@ -258,8 +265,8 @@
 /* Desktop from 1440px */
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440px;
-    max-width: none;
+    width: 100%;
+    max-width: 1440px;
     padding: 40px 128px;
   }
 

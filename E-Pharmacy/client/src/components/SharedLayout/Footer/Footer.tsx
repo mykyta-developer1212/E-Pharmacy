@@ -90,7 +90,7 @@ const Footer = () => {
         <div className={styles.bottom}>
           <ul className={styles.bottomList}>
             <li className={styles.bottomItem}>
-              &copy; E-Pharmacy 2023. All Rights Reserved
+              &copy; E-Pharmacy 2026. All Rights Reserved
             </li>
             <li className={styles.bottomItem}>
               <a className={styles.bottomLink} href="/privacy-policy">

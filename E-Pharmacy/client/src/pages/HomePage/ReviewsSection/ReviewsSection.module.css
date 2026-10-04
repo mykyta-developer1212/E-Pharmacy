@@ -2,7 +2,9 @@
 
 .section {
   width: 100%;
+  max-width: 100%;
   margin-top: 80px;
+  overflow-x: clip;
 }
 
 /* —— Mobile fluid 320–374 —— */
@@ -12,6 +14,7 @@
   margin-inline: auto;
   box-sizing: border-box;
   padding: 0 20px;
+  overflow-x: clip;
 }
 
 .heading {
@@ -45,8 +48,10 @@
 /* Marquee viewport — avatar overhangs card top by 24px */
 .viewport {
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   padding-top: 24px;
+  min-width: 0;
 }
 
 .track {
@@ -148,6 +153,10 @@
     max-width: 375px;
     padding: 0 20px;
   }
+  
+  .section {
+    margin-top: 80px;
+  }
 
   .heading {
     max-width: 335px;
@@ -159,7 +168,6 @@
   }
 
   .subtitle {
-    margin-bottom: 64px;
     font-size: 14px;
     line-height: 1.29;
   }
@@ -176,7 +184,7 @@
 /* Tablet — 2 cards visible, all 3 scroll L→R */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .section {
-    margin-top: 100px;
+    margin-top: 120px;
   }
 
   .container {
@@ -220,8 +228,8 @@
   }
 
   .container {
-    width: 1440px;
-    max-width: none;
+    width: 100%;
+    max-width: 1440px;
     padding: 0 96px;
   }
 

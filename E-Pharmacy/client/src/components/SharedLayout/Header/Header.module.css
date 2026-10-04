@@ -1,5 +1,7 @@
 .header {
   width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .container {
@@ -7,8 +9,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 25px 20px;
+  box-sizing: border-box;
 }
 
 /* —— Logo —— */
@@ -286,7 +290,8 @@
 /* From 375px: fixed adaptive width */
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
   }
 }
 
@@ -319,8 +324,8 @@
 /* Desktop from 1440px: full menu, hide burger */
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1183px;
-    max-width: none;
+    width: 100%;
+    max-width: 1440px;
     padding: 28px 128px;
     justify-content: flex-start;
   }

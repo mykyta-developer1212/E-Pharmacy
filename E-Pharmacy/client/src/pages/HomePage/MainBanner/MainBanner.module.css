@@ -3,7 +3,9 @@
 
 .banner {
   width: 100%;
+  max-width: 100%;
   background-color: var(--green);
+  overflow-x: clip;
 }
 
 /* —— Mobile fluid 320–374 —— */
@@ -12,6 +14,8 @@
   max-width: 100%;
   margin-inline: auto;
   box-sizing: border-box;
+  padding: 80px 20px 120px;
+  overflow-x: clip;
 }
 
 .stage {
@@ -19,9 +23,10 @@
   grid-template-columns: minmax(0, 1fr);
   width: 100%;
   max-width: 331px;
-  margin-inline: 0;
+  margin-inline: auto;
   aspect-ratio: 331 / 312;
   overflow: hidden;
+  min-width: 0;
 }
 
 .image,
@@ -54,7 +59,6 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  /* Title flush left; subtitle higher + roomier line-height */
   padding: 48px 12px 0 0;
   gap: 12px;
 }
@@ -68,7 +72,10 @@
   line-height: 1;
   text-align: start;
   color: var(--white);
-  width: 609px;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .subtitle {
@@ -95,21 +102,24 @@
   .stage {
     width: 100%;
     max-width: 331px;
+    margin-inline: auto;
   }
 
   .image {
     width: 112%;
     height: 112%;
+    max-width: none;
   }
 
   .copy {
-    padding: 48px 12px 0 0;
+    padding: 45px 12px 0 0;
     gap: 12px;
   }
 
   .title {
     font-size: 50px;
     line-height: 50px;
+    max-width: 100%;
   }
 
   .subtitle {
@@ -155,7 +165,7 @@
     justify-self: start;
     align-self: start;
     margin-block-start: 140px;
-    margin-inline-start: 38px;
+    margin-inline-start: 43px;
     padding: 0;
     justify-content: flex-start;
     align-items: stretch;
@@ -219,11 +229,11 @@
   }
 
   .title {
+    width: max-content;
     max-width: none;
     font-size: 74px;
     line-height: 74px;
     text-align: start;
-  ;
   }
 
   .subtitle {

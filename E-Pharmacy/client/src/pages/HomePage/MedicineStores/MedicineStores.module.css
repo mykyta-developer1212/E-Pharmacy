@@ -2,7 +2,9 @@
 
 .section {
   width: 100%;
+  max-width: 100%;
   margin-top: 120px;
+  overflow-x: clip;
 }
 
 /* —— Mobile fluid 320–374 —— */
@@ -12,6 +14,7 @@
   margin-inline: auto;
   box-sizing: border-box;
   padding: 0 20px;
+  overflow-x: clip;
 }
 
 .heading {
@@ -74,11 +77,6 @@
   border-radius: 20px;
 }
 
-/*
-  Figma: three identical bars 198×42, rotate(22deg),
-  bg rgba(89,177,122,0.08), rounded on the left only; right clipped by overflow.
-  left/top below = unrotated box so its center matches Figma’s rotated AABB center.
-*/
 .decor {
   position: absolute;
   inset: 0;
@@ -124,10 +122,12 @@
 
 .cardHeader {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 32px;
+  min-width: 0;
 }
 
 .storeName {
@@ -266,9 +266,6 @@
 
 /* Tablet — 344×232, 2 columns: padding 32px, gap 16×16 */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .section {
-    padding-top: 120px;
-  }
 
   .container {
     max-width: 768px;
@@ -356,13 +353,10 @@
 
 /* Desktop — 392×232, 3 columns */
 @media screen and (min-width: 1440px) {
-  .section {
-    padding-top: 120px;
-  }
 
   .container {
-    width: 1440px;
-    max-width: none;
+    width: 100%;
+    max-width: 1440px;
     padding: 0 96px;
   }
 
