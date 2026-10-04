@@ -1,13 +1,7 @@
 .footer {
   width: 100%;
-  max-width: 100%;
-  margin-top: auto;
-  margin-bottom: 0;
-  flex: 0 0 auto;
-  align-self: stretch;
   background-color: var(--green);
   color: var(--gray);
-  overflow-x: clip;
 }
 
 .container {
@@ -18,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* —— Top: brand + nav/social —— */
 .top {
   display: flex;
   flex-direction: column;

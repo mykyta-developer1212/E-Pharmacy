@@ -14,7 +14,7 @@ const STORES = [
   },
   {
     id: 2,
-    name: 'Tremblay and Schiller',
+    name: 'Tremblay and ...',
     street: 'Kretoria F45',
     city: 'Castlerea',
     phone: '595-08-2102',

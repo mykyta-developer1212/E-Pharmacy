@@ -1,4 +1,7 @@
-/* Figma: Mobile 335×202 · Tablet 344×232 · Desktop 392×232 */
+/* Figma:
+   Mobile  — cards 335×202 · block 335×1248 (height from cards only)
+   Tablet  — cards 344×227 · block width from cards
+   Desktop — cards 392×232 · block 1248×502 (height from cards only) */
 
 .section {
   width: 100%;
@@ -47,19 +50,27 @@
   color: var(--dark-gray);
 }
 
+/* Card block: 335 wide — height formed by cards (no fixed height) */
 .list {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 335px;
+  justify-content: center;
   gap: 20px;
-  width: 100%;
-  max-width: 335px;
+  width: 335px;
+  height: auto;
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  box-sizing: border-box;
 }
 
+/* Card: 335×202 */
 .card {
+  display: block;
   margin: 0;
+  box-sizing: border-box;
+  width: 335px;
+  height: 202px;
   min-width: 0;
 }
 
@@ -68,8 +79,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
-  min-height: 202px;
+  width: 335px;
+  height: 202px;
   padding: 32px;
   overflow: hidden;
   background-color: var(--turquoise);
@@ -97,19 +108,16 @@
   transform-origin: center center;
 }
 
-/* Top — furthest right */
 .decorLine1 {
   right: -28%;
   top: 55%;
 }
 
-/* Middle — furthest left into the card */
 .decorLine2 {
   right: -9%;
   top: 67%;
 }
 
-/* Bottom — along the lower edge */
 .decorLine3 {
   right: -13%;
   top: 94%;
@@ -122,7 +130,7 @@
 
 .cardHeader {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
@@ -134,11 +142,14 @@
   margin: 0;
   flex: 1 1 auto;
   min-width: 0;
+  overflow: hidden;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.4;
   color: var(--dark-blue);
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .meta {
@@ -236,7 +247,7 @@
   color: var(--dark-gray);
 }
 
-/* Mobile 375 artboard — adaptive */
+/* Mobile 375 — cards 335×202, block 335 (height from cards) */
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .container {
     max-width: 375px;
@@ -254,19 +265,26 @@
   }
 
   .list {
-    max-width: 335px;
+    width: 335px;
+    height: auto;
+    grid-template-columns: 335px;
     gap: 20px;
   }
 
+  .card {
+    width: 335px;
+    height: 202px;
+  }
+
   .cardInner {
-    min-height: 202px;
+    width: 335px;
+    height: 202px;
     padding: 32px;
   }
 }
 
-/* Tablet — 344×232, 2 columns: padding 32px, gap 16×16 */
+/* Tablet — cards 344×227, block width 704 (2×344 + 16), height from cards */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-
   .container {
     max-width: 768px;
     padding: 0 32px;
@@ -290,13 +308,21 @@
   }
 
   .list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 344px);
     gap: 16px;
-    max-width: 704px;
+    width: 704px;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .card {
+    width: 344px;
+    height: 227px;
   }
 
   .cardInner {
-    min-height: 232px;
+    width: 344px;
+    height: 227px;
     padding: 40px;
     border-radius: 27px;
   }
@@ -307,7 +333,6 @@
     max-height: none;
   }
 
-  /* Anchored from the right so 344px & 392px cards share Figma offsets */
   .decorLine1 {
     left: auto;
     right: -108px;
@@ -351,9 +376,8 @@
   }
 }
 
-/* Desktop — 392×232, 3 columns */
+/* Desktop — cards 392×232, block 1248 wide (3×392 + 2×36), height from cards → 502 */
 @media screen and (min-width: 1440px) {
-
   .container {
     width: 100%;
     max-width: 1440px;
@@ -379,12 +403,20 @@
   .list {
     grid-template-columns: repeat(3, 392px);
     gap: 38px 36px;
-    max-width: 1248px;
-    margin-inline: 0;
+    width: 1248px;
+    height: auto;
+    margin-inline: auto;
+    justify-content: start;
+  }
+
+  .card {
+    width: 392px;
+    height: 232px;
   }
 
   .cardInner {
-    min-height: 232px;
+    width: 392px;
+    height: 232px;
     padding: 40px;
     border-radius: 27px;
   }

@@ -18,9 +18,11 @@
 .banner {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   overflow: hidden;
   background-color: var(--green);
   border-radius: 32px;
+  padding: 20px;
 }
 
 .copy {
@@ -28,7 +30,7 @@
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
-  padding: 40px 20px 32px;
+  padding: 20px 0 32px;
 }
 
 .title {
@@ -80,11 +82,24 @@
 }
 
 .media {
+  position: relative;
   width: 100%;
-  aspect-ratio: 335 / 280;
+  aspect-ratio: 295 / 335;
   overflow: hidden;
-  /* Green crop: large left arc into green; bottom-right matches banner */
-  border-radius: 140px 0 32px 140px;
+  border-radius: 0 20px 20px 0;
+}
+
+.media::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -121px;
+  left: -557px;
+  width: 577px;
+  height: 578px;
+  border-radius: 50%;
+  background-color: var(--green);
+  pointer-events: none;
 }
 
 .image {
@@ -92,7 +107,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 35% center;
 }
 
 /* Ticker / lightning block — marquee on mobile & tablet */
@@ -171,10 +186,11 @@
 
   .banner {
     border-radius: 32px;
+    padding: 20px;
   }
 
   .copy {
-    padding: 40px 20px 32px;
+    padding: 20px 0 32px;
   }
 
   .title {
@@ -190,8 +206,15 @@
   }
 
   .media {
-    aspect-ratio: 335 / 280;
-    border-radius: 140px 0 32px 140px;
+    aspect-ratio: 295 / 335;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .media::before {
+    top: -121px;
+    left: -557px;
+    width: 577px;
+    height: 578px;
   }
 
   .ticker {
@@ -220,10 +243,11 @@
 
   .banner {
     border-radius: 40px;
+    padding: 40px;
   }
 
   .copy {
-    padding: 64px 48px 40px;
+    padding: 24px 0 40px;
     max-width: 560px;
   }
 
@@ -245,8 +269,16 @@
   }
 
   .media {
-    aspect-ratio: 704 / 360;
-    border-radius: 180px 0 40px 180px;
+    aspect-ratio: 624 / 360;
+    border-radius: 0 28px 28px 0;
+  }
+
+  /* Ellipse 8 scaled to tablet (shifted slightly right) */
+  .media::before {
+    top: -115px;
+    left: -473px;
+    width: 575px;
+    height: 576px;
   }
 
   .ticker {
@@ -264,7 +296,7 @@
   }
 }
 
-/* Desktop — side-by-side banner, static feature row */
+/* Desktop — SoftRyzen layout: padded banner, inset image, green half-circle crop */
 @media screen and (min-width: 1440px) {
   .section {
     margin-top: 120px;
@@ -278,16 +310,19 @@
 
   .banner {
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     min-height: 524px;
+    padding: 40px 40px 40px 80px;
     border-radius: 60px;
   }
 
   .copy {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     justify-content: center;
-    max-width: none;
-    padding: 64px 32px 64px 64px;
+    max-width: 501px;
+    padding: 24px 0;
   }
 
   .title {
@@ -309,17 +344,25 @@
   }
 
   .media {
-    flex: 0 0 661px;
-    width: 661px;
-    height: 524px;
+    flex: 0 0 608px;
+    width: 608px;
+    height: 406px;
     aspect-ratio: auto;
-    /* Semi-circle crop on the left into green; right matches banner */
-    border-radius: 262px 60px 60px 262px;
+    border-radius: 0 40px 40px 0;
+  }
+
+  /* Ellipse 8 under layout, shifted slightly right */
+  .media::before {
+    top: -125px;
+    left: -523px;
+    width: 640px;
+    height: 641px;
   }
 
   .image {
     width: 100%;
     height: 100%;
+    object-position: 65% center;
   }
 
   .ticker {
